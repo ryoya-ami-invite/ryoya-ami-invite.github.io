@@ -31,7 +31,7 @@ function createPetal() {
 }
 setInterval(createPetal, 250);
 
-fetch("../html/form.html")
+fetch("html/form.html")
   .then(res => res.text())
   .then(html => {
     document.getElementById("form").innerHTML = html;
