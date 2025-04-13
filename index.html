@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ryoya & Ami 結婚式のご案内</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
@@ -19,12 +19,11 @@
     <a href="#form">出欠確認</a>
   </nav>
 
-  <section id="photos" class="gallery">
-    <img src="venue1.jpg" alt="会場写真1">
-    <img src="venue2.jpg" alt="会場写真2">
-    <img src="venue3.jpg" alt="会場写真3">
-    <img src="couple.jpg" alt="前撮り写真">
-  </section>
+  <div id="photo-background"></div>
+  <section class="photo-trigger" data-photo="venue1.jpg"></section>
+  <section class="photo-trigger" data-photo="venue2.jpg"></section>
+  <section class="photo-trigger" data-photo="venue3.jpg"></section>
+  <section class="photo-trigger" data-photo="couple.jpg"></section>
 
   <section id="details">
     <h2>式のご案内</h2>
@@ -54,7 +53,7 @@
 
   <section id="form"></section>
 
-  <script src="./js/form.js"></script>
-  <script src="./js/script.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

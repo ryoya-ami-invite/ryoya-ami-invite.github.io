@@ -147,3 +147,25 @@ section {
   color: green;
   margin-top: 0.5em;
 }
+
+#photo-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+
+.photo-trigger {
+  height: 100vh;
+}
+
