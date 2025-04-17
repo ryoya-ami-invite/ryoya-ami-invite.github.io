@@ -1,0 +1,78 @@
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  body {
+      font-size: 16px;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5em;
+      margin: 1em auto;
+    }
+
+    nav a {
+      font-size: 1em;
+      padding: 0.5em 1em;
+      background: #fdf3e7;
+      border-radius: 1em;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .book-wrapper {
+      width: 100%;
+      height: auto;
+      margin: 2em auto;
+    }
+
+    #flipbook {
+      width: 100% !important;
+      height: auto !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #flipbook .page {
+      width: 100% !important;
+      height: auto !important;
+      padding: 2em 1em !important;
+      box-shadow: none;
+    }
+
+    .cover-image-wrapper img {
+      object-fit: contain !important;
+    }
+
+    iframe {
+      width: 100% !important;
+      height: 250px;
+    }
+
+    .page img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .schedule-note,
+    .schedule-list,
+    .ps-message {
+      text-align: center;
+      font-size: 1em;
+    }
+
+  .book-wrapper {
+       width: 100vw;
+       height: auto;
+       padding: 0;
+       margin: 0 auto;
+       overflow-x: scroll;
+     }
+}

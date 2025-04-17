@@ -6,8 +6,8 @@ $('#flipbook').turn({
   height: 900,
   autoCenter: true,
   display: 'double',
-  elevation: 0, // 影の影響を一旦なくす
-  gradients: false, // グラデーションを一旦OFFに
+  elevation: 0,
+  gradients: false,
   acceleration: true
 });
 

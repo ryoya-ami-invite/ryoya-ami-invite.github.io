@@ -1,10 +1,8 @@
-let formLoaded = false; // 一度だけ読み込むようにフラグ用意
+let formLoaded = false;
 
 $("#flipbook").bind("turned", function (e, page) {
   const totalPages = $("#flipbook").turn("pages");
 
-  // ここで最後のページ（フォームのページ）を指定
-  // 例えば最後のページが form の場合、totalPagesを使う
   if (page === totalPages - 1 && !formLoaded) {
     const formContainer = document.getElementById("form");
     if (!formContainer) {
@@ -17,7 +15,7 @@ $("#flipbook").bind("turned", function (e, page) {
       .then(html => {
         formContainer.innerHTML = html;
         setupForm();
-        formLoaded = true; // フラグを立てて二重読み込みを防ぐ
+        formLoaded = true;
       })
       .catch(err => {
         console.error("フォームの読み込み失敗:", err);
