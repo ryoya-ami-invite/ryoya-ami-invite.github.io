@@ -1,37 +1,44 @@
 $(document).ready(function () {
   const $book = $("#flipbook");
 
-$('#flipbook').turn({
-  width: 1200,
-  height: 900,
-  autoCenter: true,
-  display: 'double',
-  elevation: 0,
-  gradients: false,
-  acceleration: true
-});
+  // PCのみ flipbook を有効化
+  if (window.innerWidth > 768) {
+    $book.turn({
+      width: 1200,
+      height: 900,
+      autoCenter: true,
+      display: 'double',
+      elevation: 0,
+      gradients: false,
+      acceleration: true
+    });
 
-  $(".page").on("click", function () {
-    const index = $(this).index();
-    const total = $book.turn("pages");
-    const current = $book.turn("page");
+    // ページクリックによるナビゲーション
+    $(".page").on("click", function () {
+      const index = $(this).index();
+      const total = $book.turn("pages");
+      const current = $book.turn("page");
 
-    let targetPage = 0;
+      let targetPage = 0;
+      if (index === 0) targetPage = 2;
+      else if (index === 1) targetPage = 1;
+      else if (index === 2) targetPage = 4;
+      else if (index === 3) targetPage = 2;
+      else if (index === 4) targetPage = 6;
+      else if (index === 5) targetPage = 4;
+      else return;
 
-    if (index === 0) targetPage = 2;
-    else if (index === 1) targetPage = 1;
-    else if (index === 2) targetPage = 4;
-    else if (index === 3) targetPage = 2;
-    else if (index === 4) targetPage = 6;
-    else if (index === 5) targetPage = 4;
-    else return;
-
-    if (targetPage > total || targetPage === current) return;
-    $book.turn("page", targetPage);
-  });
+      if (targetPage > total || targetPage === current) return;
+      $book.turn("page", targetPage);
+    });
+  } else {
+    // スマホ用表示切替クラス追加
+    document.getElementById("flipbook").classList.add("sp-scroll-view");
+  }
 
   setupBackgroundTriggers();
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const seasonalGreetingElement = document.querySelector(".seasonal-greeting");
@@ -119,6 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
           block: "center"
         });
       }
+      const targetId = this.getAttribute("href");
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
     });
   });
 });

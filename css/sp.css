@@ -47,10 +47,6 @@
       box-shadow: none;
     }
 
-    .cover-image-wrapper img {
-      object-fit: contain !important;
-    }
-
     iframe {
       width: 100% !important;
       height: 250px;
@@ -75,4 +71,54 @@
        margin: 0 auto;
        overflow-x: scroll;
      }
+
+  #flipbook.sp-scroll-view {
+     display: block;
+     width: 100%;
+     height: auto;
+   }
+
+   #flipbook.sp-scroll-view .page {
+     position: static !important;
+     width: 100% !important;
+     height: auto !important;
+     box-shadow: none !important;
+     margin-bottom: 2em;
+   }
+
+   #flipbook.sp-scroll-view .page[data-type="cover"]{
+     padding: 0 !important;
+     margin: 0 !important;
+   }
+
+   .cover-image-wrapper {
+       position: relative; /* 絶対必要！ */
+       width: 100%;
+       height: auto;
+     }
+
+ .cover-image-wrapper img {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   object-position: center;
+ }
+
+ .cover-text {
+   position: absolute;
+   bottom: 10%;
+   left: 50%;
+   transform: translateX(-50%);
+   text-align: center;
+   z-index: 10;
+   color: #333;
+   padding: 0.5em 1em;
+   border-radius: 1em;
+ }
+
+ .wedding-title,
+ .wedding-names {
+   margin: 0.3em 0;
+   white-space: nowrap;
+ }
 }

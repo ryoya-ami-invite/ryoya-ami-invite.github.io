@@ -28,10 +28,10 @@
 </header>
 
 <nav>
-  <a href="#flipbook" data-page="2">ご挨拶</a>
-  <a href="#flipbook" data-page="5">スケジュール</a>
-  <a href="#flipbook" data-page="6">ご案内</a>
-  <a href="#flipbook" data-page="7">ご出欠</a>
+  <a href="#greeting" data-page="2">ご挨拶</a>
+  <a href="#schedule" data-page="5">スケジュール</a>
+  <a href="#access" data-page="6">ご案内</a>
+  <a href="#form" data-page="7">ご出欠</a>
 </nav>
 
 <div id="photo-background"></div>
@@ -45,13 +45,14 @@
     <div class="page" data-type="cover">
       <div class="cover-image-wrapper">
         <img src="img/cover-illustration.jpg" alt="結婚式の表紙イラスト">
-      </div>
-      <div class="cover-text">
-        <h2 class="wedding-title">Welcome to our Wedding</h2>
-        <h1 class="wedding-names">AMI & RYOYA</h1>
+
+        <div class="cover-text">
+          <h2 class="wedding-title">Welcome to our Wedding</h2>
+          <h1 class="wedding-names">AMI & RYOYA</h1>
+        </div>
       </div>
     </div>
-    <div class="page greeting left-page">
+    <div class="page greeting left-page" id="greeting">
       <h2 class="greeting-heading">～ご挨拶～</h2>
       <p class="seasonal-greeting"></p>
       <p>
@@ -72,7 +73,7 @@
       <img src="../img/bride.jpg" alt="新婦写真">
       <p>加藤 杏実<br>2002年2月10日、神奈川県生まれ。O型。会社員<br>料理と寝ることが好きです。<br><br>ミッフィーミッフィーミッフィー</p>
     </div>
-    <div class="page right-page">
+    <div class="page right-page" id="schedule">
       <h2>～⏰ 当日のスケジュール～</h2>
       <ul class="schedule-list">
         <li>🎉 13:00 受付開始</li>
@@ -89,7 +90,7 @@
       </p>
       <div class="schedule-extra-message" id="reception-note" style="display: none;"></div>
     </div>
-    <div class="page left-page">
+    <div class="page left-page" id="access">
       <h2>会場のご案内</h2>
       <p>アニヴェルセル ヒルズ横浜</p>
       <p>所在地： 〒224-0032 神奈川県横浜市都筑区茅ケ崎中央４−１</p>
