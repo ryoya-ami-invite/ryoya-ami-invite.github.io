@@ -105,4 +105,20 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       receptionNote.style.display = "block";
     }
+
+    const flipbook = $("#flipbook");
+
+  document.querySelectorAll("nav a[data-page]").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetPage = parseInt(this.dataset.page, 10);
+      if (!isNaN(targetPage)) {
+        flipbook.turn("page", targetPage);
+        document.getElementById("flipbook").scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+    });
+  });
 });
