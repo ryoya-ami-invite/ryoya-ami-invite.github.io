@@ -4,81 +4,113 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ryoya & Ami 結婚式のご案内</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/seasonalBackground.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/book.css">
   <link rel="preload" href="img/venue1.jpg" as="image">
   <link rel="preload" href="img/venue2.jpg" as="image">
   <link rel="preload" href="img/venue3.jpg" as="image">
   <link rel="preload" href="img/couple.jpg" as="image">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/turn.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Ryoya & Ami</h1>
-    <p>2025年8月17日（日）</p>
-    <div id="countdown"></div>
-  </header>
+<div class="sakura-container"></div>
+<div class="bubble-container"></div>
+<header>
+  <h1>Ryoya & Ami</h1>
+  <p>2025年8月17日（日）</p>
+  <div id="countdown"></div>
+</header>
 
-  <nav>
-    <a href="#photos">写真</a>
-    <a href="#details">ご案内</a>
-    <a href="#form">出欠確認</a>
-  </nav>
+<nav>
+  <a href="#photos">写真</a>
+  <a href="#details">ご案内</a>
+  <a href="#form">ご出欠</a>
+</nav>
 
-  <div id="photo-background"></div>
-  <section class="photo-trigger" data-photo="venue1.jpg"></section>
-  <section class="photo-trigger" data-photo="venue2.jpg"></section>
-  <section class="photo-trigger" data-photo="venue3.jpg"></section>
-  <section class="photo-trigger" data-photo="couple.jpg"></section>
+<div id="photo-background"></div>
+<section class="photo-trigger" data-photo="venue1.jpg"></section>
+<section class="photo-trigger" data-photo="venue2.jpg"></section>
+<section class="photo-trigger" data-photo="venue3.jpg"></section>
+<section class="photo-trigger" data-photo="couple.jpg"></section>
 
-  <section>
-    <h2>挨拶</h2>
-    <p>春の訪れを心待ちにする季節になりました(時候の挨拶はアクセスするタイミングで変わる)</br>
-      皆様にはお元気にお過ごしのこととお慶び申し上げます</br>
-      この度 私たち二人は結婚することにいたしました</br>
-      つきましては お世話になっております皆さまへのご挨拶と</br>
-      今後のお付き合いへのお願いもかねまして ささやかな宴を開催したいと思います</br>
-      ご多用のところ恐縮ではございますが ご出席くださいますようご案内申し上げます</br>
-    </p>
-  </section>
-
-  <section>
-    <h2>新郎プロフィール</h2>
-    写真、自己紹介
-  </section>
-
-  <section>
-    <h2>新婦プロフィール</h2>
-    写真、自己紹介
-  </section>
-
-  <section>
-    <h2>当日のタイムスケジュール</h2>
-    <ul>
-      <li>13:30 受付開始</li>
-      <li>13:30 挙式</li>
-      <li>14:00 ウェルカムパーティー</li>
-      <li>14:45 入場</li>
-      <li>17:00 送賓</li>
-    </ul>
-  </section>
-
-  <section id="details">
-    <h2>式のご案内</h2>
-    <p>日時：2025年8月17日（日） 14:00〜<br>
-    会場：アニヴェルセルヒルズ 横浜</p>
-    <iframe
+<div class="book-wrapper">
+  <div id="flipbook">
+    <div class="page" data-type="cover">
+      <div class="cover-image-wrapper">
+        <img src="img/cover-illustration.jpg" alt="結婚式の表紙イラスト">
+      </div>
+      <div class="cover-text">
+        <h2 class="wedding-title">Welcome to our Wedding</h2>
+        <h1 class="wedding-names">AMI & RYOYA</h1>
+      </div>
+    </div>
+    <div class="page greeting left-page">
+      <h2 class="greeting-heading">～ご挨拶～</h2>
+      <p class="seasonal-greeting"></p>
+      <p>
+        皆様にはお元気にお過ごしのこととお慶び申し上げます。<br><br>
+        この度 私たち二人は結婚することにいたしました。<br>
+        つきましては お世話になっております皆さまへのご挨拶と、<br>
+        今後のお付き合いへのお願いもかねまして、<br>ささやかな宴を開催したいと思います。<br><br>
+        ご多用のところ恐縮ではございますが<br>ご出席くださいますようご案内申し上げます。</p>
+      <div class="ps-message" style="display: none;"></div>
+    </div>
+    <div class="page right-page profile-page">
+      <h2>～新郎プロフィール～</h2>
+      <img src="../img/groom.jpg" alt="新郎写真">
+      <p>市来 怜也<br>1996年11月13日、神奈川県生まれ。A型。会社員<br>ボードゲームと生き物が好きです。<br><br>当日、皆様にお会いできることを楽しみにしています。</p>
+    </div>
+    <div class="page left-page profile-page">
+      <h2>～新婦プロフィール～</h2>
+      <img src="../img/bride.jpg" alt="新婦写真">
+      <p>加藤 杏実<br>2002年2月10日、神奈川県生まれ。O型。会社員<br>料理と寝ることが好きです。<br><br>ミッフィーミッフィーミッフィー</p>
+    </div>
+    <div class="page right-page">
+      <h2>～⏰ 当日のスケジュール～</h2>
+      <ul class="schedule-list">
+        <li>🎉 13:00 受付開始</li>
+        <li>💍 13:30 挙式</li>
+        <li>🍹 14:00 ウェルカムパーティー</li>
+        <li>🚪 14:45 入場</li>
+        <li>👋 17:00 送賓</li>
+      </ul>
+      <p class="schedule-note">
+        挙式は「人前式」のかたちで執り行います。<br>
+        バージンロード沿いのお席では、<br>ささやかな演出にご協力いただく場面がございます。<br>
+        また余興の関係上、両家でのお席の分け方を設けておりません。<br>
+        どうぞリラックスしてお楽しみくださいませ。
+      </p>
+      <div class="schedule-extra-message" id="reception-note" style="display: none;"></div>
+    </div>
+    <div class="page left-page">
+      <h2>会場のご案内</h2>
+      <p>アニヴェルセル ヒルズ横浜</p>
+      <p>所在地： 〒224-0032 神奈川県横浜市都筑区茅ケ崎中央４−１</p>
+      <p>「センター南駅」1番出口より徒歩2分</p>
+      <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.9468752590486!2d139.5725672!3d35.5452103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f63240e1e6ed%3A0x9b508a1aec1f9a11!2z44Ki44O844Op44Oz44K544K_44Or44K5IOODluODqeODs-ODs-ODvOOCr-OCueODiQ!5e0!3m2!1sja!2sjp!4v1712996243435!5m2!1sja!2sjp"
-      width="100%"
-      height="300"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="page right-page" id="form">
+      <!-- Googleフォーム連携 or 独自フォーム読み込み -->
+    </div>
+  </div>
+</div>
 
-  <section id="form"></section>
-
-  <script src="js/form.js"></script>
-  <script src="js/script.js"></script>
+<script src="js/common.js"></script>
+<script src="js/seasonalBackground.js"></script>
+<script src="js/form.js"></script>
+<script src="js/book.js"></script>
+<script src="js/background.js"></script>
 </body>
 </html>

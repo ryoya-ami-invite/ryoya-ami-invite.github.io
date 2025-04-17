@@ -1,0 +1,239 @@
+/* ====================
+   Base Book Layout (turn.js対応)
+==================== */
+
+.book-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  height: 900px;
+  margin: 5vh auto;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#flipbook {
+  width: 1200px;
+  height: 900px;
+  position: relative;
+}
+
+/* 各ページ共通 */
+#flipbook .page {
+  width: 600px;
+  height: 900px;
+  box-sizing: border-box;
+  padding: 0 !important;
+  position: relative;
+}
+
+#flipbook .page > div,
+#flipbook .page p,
+#flipbook .page h1,
+#flipbook .page h2 {
+  padding: 3em 2em;
+}
+
+/* ===== 表紙ページ調整 ===== */
+#flipbook .page[data-type="cover"] {
+  padding: 0;
+  background: #fff;
+  position: relative;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.cover-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.cover-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page[data-type="cover"] .cover-text {
+  position: absolute;
+  bottom: -4%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #333;
+  z-index: 2;
+}
+
+.wedding-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5em;
+  color: #a67c7c;
+  margin: 0.1em 0;
+  white-space: nowrap;
+  padding: 0 !important;
+}
+
+.wedding-names {
+  font-family: "Wedding Party", cursive;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.1em 0;
+  white-space: nowrap;
+  padding: 0 !important;
+}
+/* ===== 左右ページごとの個別デザイン ===== */
+.page.left-page {
+  background-color: #fffce9;
+  font-size: 1.1rem;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  text-align: center;
+  line-height: 2;
+}
+
+.page.right-page {
+  background-color: #ffffff;
+  font-family: sans-serif;
+  text-align: left;
+  transform-origin: right center;
+}
+
+/* ===== 挨拶ページ ===== */
+#flipbook .page.greeting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 上下中央寄せ */
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(#fffceb, #fff6d5);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.3em; /* 少し文字を大きくして見やすさUP */
+  line-height: 2.2; /* 行間を少し広げる */
+  color: #333;
+  padding: 2em 3em; /* 内側の余白を調整 */
+  box-sizing: border-box;
+}
+
+.seasonal-greeting {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.0em;
+  line-height: 2;
+  margin-bottom: 1em;
+  padding: 0 !important;
+}
+
+.greeting h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.1em; /* ←ここを調整、例えば1emに */
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  color: #444;
+  padding: 0 !important;
+}
+
+/* ===== 共通: タイトルや画像 ===== */
+.page h1,
+.page h2 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.page img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1em;
+  display: block;
+  margin: 1em auto;
+}
+
+/* ===== プロフィールページ共通スタイル ===== */
+.page.profile-page {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  text-align: center;
+  color: #333;
+  padding: 0em;
+  line-height: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ←ここで上寄せ */
+  align-items: center;
+}
+
+.page.profile-page h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  padding: 2em 0em 0em 0em !important;
+}
+
+.page.profile-page img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 1em;
+  margin: 1em auto;
+}
+
+.page.profile-page p {
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+/* ========== スケジュール用スタイル ========== */
+.schedule-list {
+  list-style: none;
+  padding: 2em;
+  background-color: #fffef5;
+  border: 2px dashed #d8bfa0;
+  border-radius: 1em;
+  font-size: 1.1em;
+  line-height: 2;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  margin: 2em auto;
+  max-width: 80%;
+}
+.schedule-note {
+  text-align: center;
+  max-width: 90%;
+  margin: 2em auto 0 auto !important;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #444;
+}
+.reception-box {
+  line-height: 1.9;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .book-wrapper {
+    width: 100vw;
+    height: auto;
+  }
+
+  #flipbook {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  #flipbook .page {
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none;
+    padding: 2em 1em;
+  }
+
+  .cover-image-wrapper img {
+    object-fit: contain;
+  }
+}
