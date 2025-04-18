@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       receptionNote.innerHTML = `
         <div class="reception-box">
           <p>🌸 受付をお願いしております皆様へ</p>
-          <p>当日は <strong>受付開始（13:00）より30分前の12:30</strong> <br>には式場へお越しいただき、準備をお願いいたします。</p>
+          <p>当日は <strong>受付開始（午後1時）より30分前の12時30分</strong> <br>には式場へお越しいただき、準備をお願いいたします。</p>
           <p>ご協力に心より感謝申し上げます。</p>
         </div>
       `;

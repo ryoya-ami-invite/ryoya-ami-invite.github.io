@@ -12,9 +12,27 @@
     <label for="allergy">アレルギー（任意）</label>
     <input type="text" id="allergy" name="allergy">
 
+    <label>アレルギー食材のエキス・出汁は大丈夫ですか？（任意）</label>
+    <div class="radio-group">
+      <label><input type="radio" name="extract" value="OK"> OK</label>
+      <label><input type="radio" name="extract" value="NG"> NG</label>
+    </div>
+
+    <label>当日の交通手段<span style="color:red">*</span></label>
+    <div class="radio-group">
+      <label><input type="radio" name="access" value="車" required> 車（駐車場事前予約制）</label>
+      <label><input type="radio" name="access" value="公共交通機関"> 公共交通機関</label>
+    </div>
+
+
     <label for="message">メッセージ（任意）</label>
     <textarea id="message" name="message" rows="4"></textarea>
 
     <button type="submit">送信する</button>
     <p id="form-status"></p>
   </form>
+
+ <div class="form-footer-message">
+   <p>※　お手数ながらご都合の程を<span class="important-date">7月18日</span> までに</p>
+   <p>　　ご返事いただければ幸いに存じます</p>
+ </div>

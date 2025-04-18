@@ -26,6 +26,12 @@
       color: #333;
     }
 
+    .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
     .book-wrapper {
       width: 100%;
       height: auto;
@@ -118,7 +124,7 @@
 
  .wedding-title,
  .wedding-names {
-   margin: 0.3em 0;
+   margin: 0 !important;
    white-space: nowrap;
  }
 }
