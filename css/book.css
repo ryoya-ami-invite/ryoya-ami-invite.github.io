@@ -14,6 +14,16 @@
   align-items: center;
 }
 
+@media (min-width: 769px) {
+  .book-wrapper {
+    border: 5px solid #d9bfa9;
+    border-radius: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    background: #f8e3e7;
+  }
+}
+
 #flipbook {
   width: 1200px;
   height: 900px;
