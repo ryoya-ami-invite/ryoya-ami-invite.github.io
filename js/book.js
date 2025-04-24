@@ -132,3 +132,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+function revealPagesOnScroll() {
+  const pages = document.querySelectorAll('.page');
+
+  const reveal = () => {
+    pages.forEach(page => {
+      const rect = page.getBoundingClientRect();
+      const triggerPoint = window.innerHeight * 0.85;
+      if (rect.top < triggerPoint) {
+        page.classList.add('show');
+      }
+    });
+  };
+
+  reveal();
+  window.addEventListener('scroll', reveal);
+}
+
+if (window.innerWidth <= 768) {
+  document.addEventListener('DOMContentLoaded', revealPagesOnScroll);
+}

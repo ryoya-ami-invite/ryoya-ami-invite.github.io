@@ -88,8 +88,13 @@
      position: static !important;
      width: 100% !important;
      height: auto !important;
-     box-shadow: none !important;
      margin-bottom: 2em;
+     background: #fffdf8;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+     border-radius: 12px;
+     padding: 2em 1em !important;
+     margin: 1.5em auto;
+     transition: transform 0.3s ease;
    }
 
    #flipbook.sp-scroll-view .page[data-type="cover"]{
@@ -127,4 +132,27 @@
    margin: 0 !important;
    white-space: nowrap;
  }
+
+ #photo-background {
+     background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: center center !important;
+        background-attachment: scroll;
+        aspect-ratio: auto;
+   }
+
+     #flipbook.sp-scroll-view .page:hover {
+       transform: scale(1.01);
+     }
+
+     .page {
+         opacity: 0;
+         transform: translateY(50px);
+         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+       }
+
+       .page.show {
+         opacity: 1;
+         transform: translateY(0);
+       }
 }

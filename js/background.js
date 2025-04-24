@@ -4,15 +4,23 @@ function setupBackgroundTriggers() {
   let currentImage = "";
   let isVisible = false;
 
+  function getResponsiveImageName(name) {
+    const isMobile = window.innerWidth <= 768;
+    return isMobile ? name.replace(/\.jpg$/, "_SP.jpg") : name;
+  }
+
   function updatePhotoOnScroll() {
     triggers.forEach((trigger) => {
       const rect = trigger.getBoundingClientRect();
       if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
         const img = trigger.dataset.photo;
-        if (img && currentImage !== img) {
-          bg.style.backgroundImage = `url('img/${img}')`;
-          currentImage = img;
+        const responsiveImg = getResponsiveImageName(img);
+
+        if (img && currentImage !== responsiveImg) {
+          bg.style.backgroundImage = `url('img/${responsiveImg}')`;
+          currentImage = responsiveImg;
         }
+
         if (!isVisible) {
           bg.style.opacity = "1";
           isVisible = true;
@@ -36,5 +44,3 @@ function setupBackgroundTriggers() {
     updatePhotoOnScroll();
   });
 }
-
-window.setupBackgroundTriggers = setupBackgroundTriggers;
