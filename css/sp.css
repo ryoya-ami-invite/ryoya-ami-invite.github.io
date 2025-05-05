@@ -141,22 +141,33 @@
         aspect-ratio: auto;
    }
 
-     #flipbook.sp-scroll-view .page:hover {
-       transform: scale(1.01);
+ #flipbook.sp-scroll-view .page:hover {
+   transform: scale(1.01);
+ }
+
+ .page {
+     opacity: 0;
+     transform: translateY(50px);
+     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+   }
+
+   .page.show {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   .page-hint {
+    display: none;
+   }
+
+   .modal-overlay {
+       align-items: flex-start; /* 上に寄せる */
+       padding-top: 50vh;       /* 上に少し余白 */
      }
 
-     .page {
-         opacity: 0;
-         transform: translateY(50px);
-         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-       }
-
-       .page.show {
-         opacity: 1;
-         transform: translateY(0);
-       }
-
-       .page-hint {
-        display: none;
-       }
+     .modal-content {
+       width: 90%;
+       font-size: 0.95em;
+       line-height: 1.5;
+     }
 }
