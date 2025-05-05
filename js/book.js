@@ -1,7 +1,6 @@
 $(document).ready(function () {
   const $book = $("#flipbook");
 
-  // PCのみ flipbook を有効化
   if (window.innerWidth > 768) {
     $book.turn({
       width: 1200,
@@ -13,7 +12,6 @@ $(document).ready(function () {
       acceleration: true
     });
 
-    // ページクリックによるナビゲーション
     $(".page").on("click", function () {
       const index = $(this).index();
       const total = $book.turn("pages");
@@ -32,7 +30,6 @@ $(document).ready(function () {
       $book.turn("page", targetPage);
     });
   } else {
-    // スマホ用表示切替クラス追加
     document.getElementById("flipbook").classList.add("sp-scroll-view");
   }
 
@@ -45,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!seasonalGreetingElement) return;
 
-  const month = getDateFromParamOrNow().getMonth() + 1; // 0始まりやけん+1しとく
+  const month = getDateFromParamOrNow().getMonth() + 1;
 
   const greetings = {
     1: "春の訪れを心待ちにする季節となりました。",

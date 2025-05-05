@@ -21,7 +21,6 @@ function loadFormIfNeeded() {
     });
 }
 
-// PC：ページめくりで最終ページになった時にロード
 $("#flipbook").bind("turned", function (e, page) {
   const totalPages = $("#flipbook").turn("pages");
   if (page === totalPages - 1) {
@@ -29,7 +28,6 @@ $("#flipbook").bind("turned", function (e, page) {
   }
 });
 
-//　スマホ：ロード時にすぐ読み込む
 if (window.innerWidth <= 768) {
   document.addEventListener("DOMContentLoaded", loadFormIfNeeded);
 }

@@ -3,10 +3,9 @@ let globalWindX = 0;
 function updateWindDirection() {
   globalWindX = Math.floor(Math.random() * 2000) - 1000;
   setTimeout(updateWindDirection, 10000 + Math.random() * 15000);
-  console.log(globalWindX);
 }
 
-updateWindDirection(); // 初期化
+updateWindDirection();
 
 function createSakuraPetal() {
   const container = document.querySelector(".sakura-container");

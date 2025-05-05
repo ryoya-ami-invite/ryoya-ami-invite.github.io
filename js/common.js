@@ -12,11 +12,11 @@ updateCountdown();
 
 function getDateFromParamOrNow() {
   const urlParams = new URLSearchParams(window.location.search);
-  const dateStr = urlParams.get("date"); // 例: ?date=20250817
+  const dateStr = urlParams.get("date");
 
   if (dateStr && /^\d{8}$/.test(dateStr)) {
     const year = parseInt(dateStr.slice(0, 4), 10);
-    const month = parseInt(dateStr.slice(4, 6), 10) - 1; // 0始まり
+    const month = parseInt(dateStr.slice(4, 6), 10) - 1;
     const day = parseInt(dateStr.slice(6, 8), 10);
 
     const date = new Date(year, month, day);
