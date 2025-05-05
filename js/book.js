@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!seasonalGreetingElement) return;
 
-  const month = new Date().getMonth() + 1; // 0始まりやけん+1しとく
+  const month = getDateFromParamOrNow().getMonth() + 1; // 0始まりやけん+1しとく
 
   const greetings = {
     1: "春の訪れを心待ちにする季節となりました。",
@@ -152,4 +152,11 @@ function revealPagesOnScroll() {
 
 if (window.innerWidth <= 768) {
   document.addEventListener('DOMContentLoaded', revealPagesOnScroll);
+}
+
+const hint = document.querySelector(".page-hint");
+if (hint) {
+  hint.addEventListener("mouseenter", () => {
+    hint.style.display = "none";
+  });
 }

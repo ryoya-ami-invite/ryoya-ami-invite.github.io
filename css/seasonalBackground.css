@@ -1,5 +1,6 @@
 .sakura-container,
-.bubble-container {
+.bubble-container,
+.leaf-container{
   pointer-events: none;
   position: fixed;
   top: 0;
@@ -80,4 +81,18 @@
   opacity: 0.8;
   z-index: 0;
   pointer-events: none;
+}
+
+.leaf {
+  position: absolute;
+  top: -80px;
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  background-image: url("../img/leaf.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+
 }

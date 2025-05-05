@@ -1,3 +1,13 @@
+let globalWindX = 0;
+
+function updateWindDirection() {
+  globalWindX = Math.floor(Math.random() * 2000) - 1000;
+  setTimeout(updateWindDirection, 10000 + Math.random() * 15000);
+  console.log(globalWindX);
+}
+
+updateWindDirection(); // 初期化
+
 function createSakuraPetal() {
   const container = document.querySelector(".sakura-container");
   const petal = document.createElement("div");
@@ -56,6 +66,51 @@ function createBubble() {
   setTimeout(() => bubble.remove(), duration * 1000);
 }
 
-const month = new Date().getMonth() + 1;
-if (month >= 3 && month <= 5) setInterval(createSakuraPetal, 250);
-else if (month >= 6 && month <= 8) setInterval(createBubble, 400);
+function createLeaf() {
+  const container = document.querySelector(".leaf-container");
+  const leaf = document.createElement("div");
+  leaf.classList.add("leaf");
+
+  const left = Math.random() * 100;
+  const scale = 0.8 + Math.random() * 0.5;
+  const rotateStart = Math.random() * 360;
+  const rotateEnd = rotateStart + 360;
+  const duration = 10 + Math.random() * 4;
+
+  leaf.style.left = `${left}vw`;
+  leaf.style.transform = `scale(${scale})`;
+  leaf.dataset.scale = scale;
+
+  const animName = `fallLeaf-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+  const styleSheet = document.styleSheets[0];
+  const fallY = 'calc(100vh + 30px)';
+  const swayX = globalWindX;
+
+  styleSheet.insertRule(`
+    @keyframes ${animName} {
+      0% {
+        transform: translateY(0) translateX(0) rotate(${rotateStart}deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(${fallY}) translateX(${swayX}px) rotate(${rotateEnd}deg);
+        opacity: 0.9;
+      }
+    }
+  `, styleSheet.cssRules.length);
+
+  leaf.style.animation = `${animName} ${duration}s ease-in-out forwards`;
+  container.appendChild(leaf);
+
+  while (container.children.length > 150) container.removeChild(container.firstChild);
+}
+
+const month = getDateFromParamOrNow().getMonth() + 1;
+
+if (month >= 3 && month <= 4) {
+  setInterval(createSakuraPetal, 250); // 桜（3〜4月）
+} else if (month === 5 || month === 6) {
+  setInterval(createLeaf, 300); // 葉（5〜6月）
+} else if (month >= 7 && month <= 8) {
+  setInterval(createBubble, 400); // 泡（7〜8月）
+}

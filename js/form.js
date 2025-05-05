@@ -43,6 +43,22 @@ function setupForm() {
     return;
   }
 
+  const carRadio = document.querySelector('input[name="access"][value="車"]');
+  const modal = document.getElementById("car-modal");
+  const modalClose = document.getElementById("modal-close");
+
+  if (carRadio && modal && modalClose) {
+    carRadio.addEventListener("change", () => {
+      if (carRadio.checked) {
+        modal.style.display = "flex";
+      }
+    });
+
+    modalClose.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 

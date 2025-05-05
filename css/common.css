@@ -9,7 +9,7 @@ body {
 
 header {
   position: relative;
-  height: 100vh;
+  min-height: 100svh;;
   background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('../img/header.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
