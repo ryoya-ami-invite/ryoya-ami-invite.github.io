@@ -60,6 +60,28 @@ function setupForm() {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const name = document.getElementById("name");
+    const attendance = document.querySelector('input[name="attendance"]:checked');
+    const access = document.querySelector('input[name="access"]:checked');
+
+    let errorMsg = "";
+
+    if (!name.value.trim()) {
+      errorMsg += "お名前を入力してください\n";
+    }
+    if (!attendance) {
+      errorMsg += "ご出欠を選択してください\n";
+    }
+    if (!access) {
+      errorMsg += "交通手段を選択してください\n";
+    }
+
+    if (errorMsg) {
+      e.preventDefault();
+      alert(errorMsg);
+      return;
+    }
+
     const data = new FormData(form);
     status.textContent = "送信中...";
 

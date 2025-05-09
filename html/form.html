@@ -1,11 +1,11 @@
  <h2>出欠のご確認</h2>
   <form id="rsvp-form">
     <label for="name">お名前<span style="color:red">*</span></label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name">
 
     <label>ご出欠<span style="color:red">*</span></label>
     <div class="radio-group">
-      <label><input type="radio" name="attendance" value="出席" required> 出席</label>
+      <label><input type="radio" name="attendance" value="出席"> 出席</label>
       <label><input type="radio" name="attendance" value="欠席"> 欠席</label>
     </div>
 
@@ -20,7 +20,7 @@
 
     <label>当日の交通手段<span style="color:red">*</span></label>
     <div class="radio-group">
-      <label><input type="radio" name="access" value="車" required> 車（駐車場事前予約制）</label>
+      <label><input type="radio" name="access" value="車"> 車（駐車場事前予約制）</label>
       <label><input type="radio" name="access" value="公共交通機関"> 公共交通機関</label>
     </div>
     <div id="car-modal" class="modal-overlay" style="display: none;">
