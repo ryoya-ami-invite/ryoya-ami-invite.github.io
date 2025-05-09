@@ -70,11 +70,11 @@ function setupForm() {
     })
     .then(() => {
       form.reset();
-      status.textContent = "送信が完了しました。ありがとうございました！";
+      status.textContent = "送信が完了しました ありがとうございました！";
     })
     .catch((error) => {
       console.error("送信エラー:", error);
-      status.textContent = "送信に失敗しました。時間をおいてもう一度お試しください。";
+      status.textContent = "送信に失敗しました 時間をおいてもう一度お試しください";
     });
   });
 }
