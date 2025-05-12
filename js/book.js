@@ -98,16 +98,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
     const receptionNote = document.getElementById("reception-note");
+    const scheduleNote = document.querySelector(".schedule-note");
 
     if (role === "reception") {
       receptionNote.innerHTML = `
         <div class="reception-box">
           <p>🌸 受付をお願いしております皆様へ</p>
-          <p>当日は <strong>受付開始（午後1時）より45分前の12時15分</strong> <br>には式場へお越しいただき 準備をお願いいたします</p>
+          <p>受付の準備のため 当日は <strong>12時15分</strong> <br>には式場へお越しいただき 準備をお願いいたします</p>
           <p>ご協力に心より感謝申し上げます</p>
         </div>
       `;
       receptionNote.style.display = "block";
+
+        if (scheduleNote) {
+          scheduleNote.style.display = "none";
+        }
     }
 
     const flipbook = $("#flipbook");
