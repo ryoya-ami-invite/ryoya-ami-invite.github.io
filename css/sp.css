@@ -107,7 +107,7 @@
    }
 
    .cover-image-wrapper {
-       position: relative; /* 絶対必要！ */
+       position: relative;
        width: 100%;
        height: auto;
      }
@@ -165,8 +165,8 @@
    }
 
    .modal-overlay {
-       align-items: flex-start; /* 上に寄せる */
-       padding-top: 50vh;       /* 上に少し余白 */
+       align-items: flex-start;
+       padding-top: 50vh;
      }
 
      .modal-content {
